@@ -1,7 +1,9 @@
 Java clone for Python term extractor topia.
 https://github.com/turian/topia.termextract
 
-jtopia is a simple java porting of python term extractor jtopia.
+jtopia is a simple java porting of python term extractor topia.
 
 For more help on how to use 
 https://github.com/srijiths/jtopia/wiki
+
+Or take a look at JtopiaUsage.java
