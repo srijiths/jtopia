@@ -30,7 +30,7 @@ public class TextCleaner {
 	public String normalizeText(String text) {
 		logger.debug("Input to normalize text : "+text);
 		if(!string.isNullOrEmpty(text)) {
-			text = replaceAll(text, "\\n", " ");
+			text = replaceAll(text, "\\n", " . ");
 		}
 		logger.debug("Input text normalized : "+text);
 		return text.trim();
