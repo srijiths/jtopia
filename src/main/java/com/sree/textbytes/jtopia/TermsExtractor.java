@@ -5,7 +5,7 @@ import com.sree.textbytes.jtopia.cleaner.TextCleaner;
 import com.sree.textbytes.jtopia.tagger.DefaultTagger;
 import com.sree.textbytes.jtopia.extractor.TermExtractor;
 import com.sree.textbytes.jtopia.filter.TermsFilter;
-import com.sree.textbytes.jtopia.helpers.string;
+import com.sree.textbytes.StringHelpers.string;
 
 /**
  * 

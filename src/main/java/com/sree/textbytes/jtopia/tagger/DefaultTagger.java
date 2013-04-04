@@ -15,7 +15,7 @@ import org.apache.log4j.Logger;
 import com.sree.textbytes.jtopia.TermDocument;
 import com.sree.textbytes.jtopia.container.TaggedTerms;
 import com.sree.textbytes.jtopia.container.TaggedTermsContainer;
-import com.sree.textbytes.jtopia.helpers.string;
+import com.sree.textbytes.StringHelpers.string;
 
 /** 
  * Default tagger which uses the simple english POS tagger lexicon

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
-import com.sree.textbytes.jtopia.helpers.string;
+import com.sree.textbytes.StringHelpers.string;
 
 /**
  * 

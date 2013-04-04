@@ -29,7 +29,7 @@ public class JtopiaUsage {
 		String line = "";
 		try {
 			while ((line = bufferedReader.readLine()) != null) {
-				stringBuffer.append(line);
+				stringBuffer.append(line+"\n");
 				
 			}
 		} catch (IOException e) {
