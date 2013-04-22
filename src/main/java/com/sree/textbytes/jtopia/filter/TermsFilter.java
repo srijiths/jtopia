@@ -51,8 +51,6 @@ public class TermsFilter {
 	public Map<String, ArrayList<Integer>> filterTerms(Map<String,Integer> extractedTerms) {
 		Map<String, ArrayList<Integer>> filteredTerms = new HashMap<String, ArrayList<Integer>>();
 		Map<String, ArrayList<Integer>> finalFilteredTerms = new HashMap<String, ArrayList<Integer>>();
-        Map<String, ArrayList<Integer>> filterTermsWithoutDuplicates = new HashMap<String, ArrayList<Integer>>();
-
 		
 		Set keySet = extractedTerms.keySet();
 		for(Object key : keySet) {
@@ -69,15 +67,33 @@ public class TermsFilter {
 				}
 			}
 		}
-		filteredTerms = removeStopWordsAndPunctuations(filteredTerms);
-		logger.debug(" Filtered terms after stopword removal "+filteredTerms);
-		finalFilteredTerms = removeDateTerms(filteredTerms);
-		filterTermsWithoutDuplicates = removeDuplicateSigleWords(finalFilteredTerms);
 		
-		return filterTermsWithoutDuplicates;
+		finalFilteredTerms = cleanUp(filteredTerms);
+
+		return finalFilteredTerms;
 	}
 	
-	private Map<String, ArrayList<Integer>> removeDuplicateSigleWords(
+	/** 
+	 * Clean up filters in one place
+	 * 
+	 * @param filteredTerms
+	 * @return
+	 */
+	private Map<String, ArrayList<Integer>> cleanUp(Map<String, ArrayList<Integer>> filteredTerms) {
+		filteredTerms = removeStopWordsAndPunctuations(filteredTerms);
+		filteredTerms = removeDateTerms(filteredTerms);
+		filteredTerms = removeDuplicateSingleWords(filteredTerms);
+		
+		return filteredTerms;
+	}
+	
+	/**
+	 * Remove duplicate single words which already in another multi word keyword
+	 * 
+	 * @param filteredTerms
+	 * @return
+	 */
+	private Map<String, ArrayList<Integer>> removeDuplicateSingleWords(
 			Map<String, ArrayList<Integer>> filteredTerms) {
 		Set keySet = filteredTerms.keySet();
 		Map<String, ArrayList<Integer>> finalTerms = new HashMap<String, ArrayList<Integer>>();
@@ -106,6 +122,12 @@ public class TermsFilter {
 		return finalTerms;
 	}
 
+	/**
+	 * 
+	 * @param singleTerm
+	 * @param keySet
+	 * @return
+	 */
 	private boolean isWordPresent(String singleTerm, Set keySet) {
 		singleTerm = singleTerm.trim().toLowerCase();
 		for (Object key : keySet) {
@@ -210,11 +232,17 @@ public class TermsFilter {
 		return finalFilterdTerms;
 	}
 
+	/**
+	 * Remove Date like patterns from the extracted set
+	 * 
+	 * @param filterdTerms
+	 * @return
+	 */
 	private Map<String, ArrayList<Integer>> removeDateTerms(
 			Map<String, ArrayList<Integer>> filterdTerms) {
 		Iterator<String> keySetItr = filterdTerms.keySet().iterator();
 
-		Map<String, ArrayList<Integer>> FinalfilterdTerms = new HashMap<String, ArrayList<Integer>>();
+		Map<String, ArrayList<Integer>> finalFilterdTerms = new HashMap<String, ArrayList<Integer>>();
 		Set keySet = filterdTerms.keySet();
 		for (Object key : keySet) {
 			term = (String) key;
@@ -244,11 +272,11 @@ public class TermsFilter {
 
 			}
 			if (!isDate) {
-				FinalfilterdTerms.put(WordUtils.capitalize(term), values);
+				finalFilterdTerms.put(WordUtils.capitalize(term), values);
 			}
 		}
 
-		return FinalfilterdTerms;
+		return finalFilterdTerms;
 	}
 
 	private boolean isDigitOnly(String term) {
@@ -269,6 +297,13 @@ public class TermsFilter {
 		return false;
 	}
 
+	/**
+	 * Punctuation filter
+	 * 
+	 * @param ch
+	 * @param term
+	 * @return
+	 */
 	private String filterPunctuations(char[] ch, String term) {
 		try {
 			for (int index = 1; index < ch.length - 1; index++) {
