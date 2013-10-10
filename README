@@ -1,10 +1,18 @@
-Java clone for Python term extractor topia.Automatic Term Extraction in Java.
+jtopia
+======
+
+Java clone for Python term extractor topia.It will extract important keywords/key phrases from text.
 https://github.com/turian/topia.termextract
 
 Dependency project
-https://github.com/srijiths/StringHelpers
+==================
 
-jtopia is a light-weight term extractor, which extracts most relevant terms / keywords from a text
+* [StringHelpers](https://github.com/srijiths/StringHelpers)
+
+jtopia is a light-weight term extractor, which is domain independent in nature.
+jtopia uses a rule based + POS tagged based approach to find out the keywords / key phrases.
+
+You can even tune the parameters in jtopia to get some filtered keywords / key phrases.
 
 For more help on how to use 
 https://github.com/srijiths/jtopia/wiki
