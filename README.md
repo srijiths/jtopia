@@ -30,10 +30,7 @@ If you want to expand the power of jtopia , have a look at the below points.
 
 * Add more POS tagged words from your domain to model/english-lexicon.txt by preserving the current form. 
 
-Because if the word from the input text is missing in english-lexicon.txt , then that word is just tagged as NNP and proceed further. 
-If its properly POS tagged in the english-lexicon.txt , then results would be different. This way you can expand jtopia to any domains.
-
-* Instead of using model/english-lexicon.txt , use another POS tagger ( Stanford POS tagger ) and make the output available to TermExtractor class.
+* Instead of using model/english-lexicon.txt , use another POS tagger ( Stanford POS tagger ) and make the POS output available to TermExtractor class.
 
 Fine tuning jtopia
 ==================
@@ -49,8 +46,8 @@ Nobody wants keyword explosion from an input text , instead every one wants maxi
 jtopia Hints
 ============
  
-If you are using short text , then apply these parameters to minimum will give you maximum possible keywords from the text. 
-Similarly if you are dealing with large text then apply these to a feasible maximum to chop out all the unwanted junk keywords, which gives you minimum keywords which are best suited for the text.
+* If you are dealing short text , then apply these parameters to minimum will give you maximum possible keywords from the text.
+* If you are dealing large text then apply these to a feasible maximum to chop out all the unwanted junk keywords, which gives you minimum keywords which are best suited for the text.
 
 How to Use
 ==========
