@@ -28,20 +28,23 @@ Expansion of jtopia in your domain
 
 If you want to expand the power of jtopia , have a look at the below points.
 
-1) Add more POS tagged words from your domain to model/english-lexicon.txt by preserving the current form. 
+* Add more POS tagged words from your domain to model/english-lexicon.txt by preserving the current form. 
 
 Because if the word from the input text are missing in english-lexicon.txt , then that word is just tagged as NNP and proceed further. 
 If its properly POS tagged in the english-lexicon.txt , then results would be different. This way you can expand jtopia to any domains.
 
-2) Instead of using model/english-lexicon.txt , use another POS tagger ( Stanfors POS tagger ) and make it available to TermExtractor class.
+* Instead of using model/english-lexicon.txt , use another POS tagger ( Stanfors POS tagger ) and make it available to TermExtractor class.
 
-3) You can change the extracted terms output using the TermsFilter class.There are two parameters (singleStrengthMinOccur and noLimitStrength) which filters the extracted jtopia output according to the parameters. 
+Fine tuning jtopia
+==================
+
+* You can change the extracted terms output using the TermsFilter class.There are two parameters (singleStrengthMinOccur and noLimitStrength) which filters the extracted jtopia output according to the parameters. 
 
 You can see this filter setting in TermsExtractor class as TermsFilter termsFilter = new TermsFilter(3, 2);
 Thease values (3,2) i set by default.
 
 This act as a fine tuning parameter in the post processing phase of jtopia.Here what jtopia does is clean the possible junk keywords from the entire extracted keyword set by applying these filter parameters.
-Nobody wants a huge number of keywords from an input text , instead every one wants maximum tuned feasible keywords. 
+Nobody wants a keyword explosion from an input text , instead every one wants maximum tuned feasible keywords. 
 
 So you can tune jtopia output according to your needs.Like if you are using short text , then apply these parameters to minimum will give you maximum possible keywords from the text. 
 Similarly if you are dealing with large text then apply these to a feasible maximum to chop out all the unwanted junk keywords, which gives you minimum keywords which are best suited for the text.
