@@ -46,7 +46,7 @@ Thease values (3,2) i set by default.
 This act as a fine tuning parameter in the post processing phase of jtopia.Here what jtopia does is clean the possible junk keywords from the entire extracted keyword set by applying these filter parameters.
 Nobody wants keyword explosion from an input text , instead every one wants maximum tuned feasible keywords. 
 
-jtopis Hints
+jtopia Hints
 ============
  
 If you are using short text , then apply these parameters to minimum will give you maximum possible keywords from the text. 
