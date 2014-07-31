@@ -55,3 +55,7 @@ For more help on how to use
 https://github.com/srijiths/jtopia/wiki
 
 Or take a look at JtopiaUsage.java
+
+License
+=======
+Apache License 2 - http://www.apache.org/licenses/LICENSE-2.0.html
