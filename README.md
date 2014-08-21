@@ -47,8 +47,8 @@ Nobody wants keyword explosion from an input text , instead every one wants maxi
 jtopia Hints
 ============
  
-* If you are dealing short text , then apply these parameters to minimum will give you maximum possible keywords from the text.
-* If you are dealing large text then apply these to a feasible maximum to chop out all the unwanted junk keywords, which gives you minimum keywords which are best suited for the text.
+* If you are dealing short text , then apply singleStrengthMinOccur,noLimitStrength to minimum will give you maximum possible keywords from the text.
+* If you are dealing large text then apply singleStrengthMinOccur, noLimitStrength to a feasible maximum to chop out all the unwanted junk keywords, which gives you minimum keywords which are best suited for the text.
 
 How to Use
 ==========
