@@ -40,8 +40,9 @@ public class TermExtractor {
 			}else if((state == search) && (tag.equals("JJ")) && (Character.isUpperCase(term.charAt(0)))) {
 				state = noun;
 				addTerms(term);
-			}else if(state == noun && tag.startsWith("N"))
-			{
+			}else if(state == noun && tag.startsWith("N")) {
+				addTerms(term);
+			}else if(state == noun && (Character.isUpperCase(term.charAt(0)))) {
 				addTerms(term);
 			}else if(state == noun && !tag.startsWith("N")) {
 				state = search;

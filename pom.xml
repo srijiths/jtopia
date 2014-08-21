@@ -4,7 +4,7 @@
 
 	<groupId>com.sree.textbytes</groupId>
 	<artifactId>jtopia</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>jtopia</name>
@@ -36,6 +36,12 @@
 			<artifactId>StringHelpers</artifactId>
 			<version>0.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.opennlp</groupId>
+			<artifactId>opennlp-tools</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
