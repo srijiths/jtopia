@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import com.sree.textbytes.jtopia.cleaner.TextCleaner;
 import com.sree.textbytes.jtopia.tagger.LexiconTagger;
 import com.sree.textbytes.jtopia.tagger.OpenNLPTagger;
+import com.sree.textbytes.jtopia.tagger.StanfordTagger;
 import com.sree.textbytes.jtopia.extractor.TermExtractor;
 import com.sree.textbytes.jtopia.filter.TermsFilter;
 import com.sree.textbytes.StringHelpers.string;
@@ -31,12 +32,18 @@ public class TermsExtractor {
 			//termDocument.setTerms(textCleaner.tokenizeText(text));
 
 			if(Configuration.taggerType.equalsIgnoreCase("default")) {
+				logger.info("Using English Lexicon POS tagger..");
 				LexiconTagger lexiconTagger = new LexiconTagger();
 				termDocument.setTagsByTerm(lexiconTagger.initialize(Configuration.getModelFileLocation()));
 				termDocument = lexiconTagger.tag(termDocument);
 			}else if(Configuration.taggerType.equalsIgnoreCase("openNLP")) {
+				logger.info("Using openNLP POS tagger..");
 				OpenNLPTagger openNLPTagger = new OpenNLPTagger();
 				termDocument = openNLPTagger.tag(termDocument);
+			}else if(Configuration.taggerType.equalsIgnoreCase("stanford")) {
+				logger.info("Using Stanford POS tagger..");
+				StanfordTagger stanfordTagger = new StanfordTagger();
+				termDocument = stanfordTagger.tag(termDocument);
 			}
 			
 			TermExtractor termExtractor = new TermExtractor();

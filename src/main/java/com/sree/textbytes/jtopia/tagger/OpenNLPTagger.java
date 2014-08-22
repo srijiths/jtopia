@@ -47,11 +47,15 @@ public class OpenNLPTagger extends DefaultTagger implements Tagger {
 			String tag = tagger.tag(term);
 			// Since open NLP has tagged terms like establish/VB , we only need the POS tag
 			// Some POS tags in openNLP has special charaters at end like their/PRP$
-			taggedTermsContainer.addTaggedTerms(term, tag.split("/")[1].replaceAll("\\$", ""), term);
+			try {
+				taggedTermsContainer.addTaggedTerms(term, tag.split("/")[1].replaceAll("\\$", ""), term);
+			}catch(Exception e) {
+			}
+			
 		}
 		
 		termDocument.setTaggedContainer(taggedTermsContainer);
-		termDocument = super.postTagProcess(termDocument);
+		termDocument = postTagProcess(termDocument);
 		if(modelStream != null) {
 			try {
 				modelStream.close();

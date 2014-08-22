@@ -31,7 +31,7 @@ If you want to expand the power of jtopia , have a look at the below points.
 * Add more POS tagged words from your domain to model/english-lexicon.txt by preserving the current form. 
 
 * Instead of using model/english-lexicon.txt , use another POS tagger ( Stanford POS tagger / OpenNLP POS Tagger ) and make the POS output available to TermExtractor class.
-	You can set this by passing "taggerType" to Configuration class. The values are "default" and "openNLP".
+	You can set this by passing "taggerType" to Configuration class. The values are "default","openNLP" or "stanford".
 
 Fine tuning jtopia
 ==================

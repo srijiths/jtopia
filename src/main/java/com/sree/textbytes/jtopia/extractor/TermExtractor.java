@@ -42,9 +42,9 @@ public class TermExtractor {
 				addTerms(term);
 			}else if(state == noun && tag.startsWith("N")) {
 				addTerms(term);
-			}else if(state == noun && (Character.isUpperCase(term.charAt(0)))) {
+			}/*else if(state == noun && (Character.isUpperCase(term.charAt(0)))) {
 				addTerms(term);
-			}else if(state == noun && !tag.startsWith("N")) {
+			}*/else if(state == noun && !tag.startsWith("N")) {
 				state = search;
 				if(multiTerm.size() > 1)
 				{
