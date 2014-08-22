@@ -4,11 +4,6 @@ jtopia
 Java clone for Python term extractor topia.It will extract important keywords/key phrases from text.
 https://github.com/turian/topia.termextract
 
-Dependency project
-==================
-
-* [StringHelpers](https://github.com/srijiths/StringHelpers)
-
 jtopia is a light-weight term extractor, which is domain independent in nature.
 jtopia uses a rule based + POS tagged based approach to find out the keywords / key phrases.
 
@@ -21,7 +16,12 @@ The numbers in the square is just an information about the extracted term.
 Hurricane Saturday Night=[1, 3]. Here 1 means the extracted keyword "Hurricane Saturday Night" has frequency 1 in the input text. 
 The number 3 means the keyword is formed using 3 words "Hurricane", "Saturday" and "Night".
 
-jtopia is using a standard POS tagged lexicon from an english text to prove the keyword extraction strategy.So all the power of jtopia lies in the POS tagged lexicon (model/english-lexicon.txt). 
+By default , jtopia is using a standard POS tagged lexicon from an english text to prove the keyword extraction strategy.So all the power of jtopia lies in the POS tagged lexicon (model/english-lexicon.txt). 
+
+Dependency project
+==================
+
+* [StringHelpers](https://github.com/srijiths/StringHelpers)
 
 Expansion of jtopia in your domain
 ==================================
